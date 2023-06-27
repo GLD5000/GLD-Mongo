@@ -96,9 +96,9 @@ const removeManyPeople = (done) => {
   });
 };
 
-const queryChain = (foodToSearch,done) => {
-  // const foodToSearch = "burrito";
-  Person.find({ favouriteFoods: foodToSearch })
+const queryChain = (done) => {
+  const foodToSearch = "burrito";
+  Person.find({ favoriteFoods: foodToSearch })
     .sort({ name: -1 })
     .limit(2)
     .select({name:1, favoriteFoods:1, age: 0 })
